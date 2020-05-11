@@ -1,0 +1,50 @@
+cabal-version:       3.0
+
+name:                coins
+version:             0.3.0.0
+build-type:          Simple
+extra-source-files:  README.md
+
+executable coins
+  main-is:             Main.hs
+  other-modules:       Core.Coins
+                     , Core.Exceptions
+                     , Core.Types
+                     , Feed
+                     , Feed.Binance.Feed
+                     , Feed.Binance.Types
+                     , Feed.Bittrex.Feed
+                     , Feed.Bittrex.Types
+                     , Feed.Coinbase.Feed
+                     , Feed.Coinbase.Types
+                     , Feed.Poloniex.Feed
+                     , Feed.Poloniex.Types
+                     , Interface
+                     , Interface.Draw
+                     , Interface.Draw.Balances
+                     , Interface.Draw.Common
+                     , Interface.Draw.Exceptions
+                     , Interface.Draw.Markets
+                     , Interface.Draw.Opportunities
+                     , Interface.Draw.Transactions
+                     , Interface.Event
+                     , Interface.State
+                     , Interface.Theme
+  build-depends:       base >=4.14 && <4.15
+                     , time
+                     , text
+                     , stm
+                     , scientific
+                     , containers
+                     , aeson
+                     , http-client
+                     , http-client-tls
+                     , safe-exceptions
+                     , async
+                     , brick
+                     , vty
+                     , vector
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  default-extensions:  OverloadedStrings
+  ghc-options:         -threaded -Wunused-imports
